@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salih | Python Backend Developer</title>
+    <meta name="description" content="Portfolio website for Salih Muhammed, a Python backend developer specializing in Django, Flask, REST Framework, and HTMX.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>S</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#hero" class="logo">Code<span>Crafted</span></a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span id="theme-icon">
+                        <!-- Icon will be inserted by JavaScript based on the current theme -->
+                    </span>
+                </button>
+                
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Salih Muhammed</h1>
+                <h2 class="hero-subtitle">
+                    <span class="typewriter">Python Backend Developer</span>
+                </h2>
+                <p class="hero-description">
+                    Building robust, scalable, and maintainable backend systems with Python, Django, Flask, and modern web technologies. Passionate about clean code, performance optimization, and innovative solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Hello, I'm <span class="text-accent">Salih Muhammed</span></h3>
+                    <p>
+                        I'm a seasoned <strong>Python Backend Developer</strong> with over 5 years of experience designing and implementing server-side applications, RESTful APIs, and microservices. My expertise lies in building secure, scalable, and maintainable systems using Python frameworks like Django and Flask.
+                    </p>
+                    <p>
+                        Based in <strong>Addis Ababa, Ethiopia</strong>, I'm passionate about software architecture, API design, and leveraging modern web technologies to create exceptional user experiences. I believe in writing clean, well-tested code and continuously learning new technologies to stay at the forefront of backend development.
+                    </p>
+                </div>
+                
+                <div class="about-content">
+                    <h3>What I <span class="text-accent">Do</span></h3>
+                    <p>
+                        I specialize in developing backend systems and APIs that power modern web applications. My technical expertise includes:
+                    </p>
+                    <ul>
+                        <li>Designing and implementing RESTful and GraphQL APIs</li>
+                        <li>Creating microservices architectures</li>
+                        <li>Database design and optimization</li>
+                        <li>Authentication and authorization systems</li>
+                        <li>Server-side rendering with modern techniques like HTMX</li>
+                        <li>Implementing automated testing and CI/CD pipelines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <!-- Python Skill -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3 class="skill-name">Python</h3>
+                        <p>Expert-level Python development with focus on performance optimization, clean code and best practices.</p>
+                        <div class="skill-level">
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" data-level="95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Django Skill -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3 class="skill-name">Django</h3>
+                        <p>Extensive experience with Django and Django REST Framework for building robust web applications and APIs.</p>
+                        <div class="skill-level">
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" data-level="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Flask Skill -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3 class="skill-name">Flask</h3>
+                        <p>Building lightweight web applications and microservices with Flask and related extensions.</p>
+                        <div class="skill-level">
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" data-level="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- REST APIs Skill -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3 class="skill-name">REST APIs</h3>
+                        <p>Designing and implementing RESTful APIs with proper documentation, security, and performance.</p>
+                        <div class="skill-level">
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" data-level="92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- HTMX Skill -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">HTMX</h3>
+                        <p>Creating interactive UIs with HTMX for modern web applications with minimal JavaScript.</p>
+                        <div class="skill-level">
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" data-level="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Databases Skill -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="skill-name">Databases</h3>
+                        <p>Working with PostgreSQL, MySQL, MongoDB, and Redis for various data storage needs.</p>
+                        <div class="skill-level">
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" data-level="88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-project-id="1">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/projects/ecommerce.svg') }}" alt="E-Commerce Microservices">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Microservices</h3>
+                        <p class="project-description">
+                            A robust e-commerce platform built with microservices architecture using Python and Django.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Django</span>
+                            <span class="project-tag">REST API</span>
+                            <span class="project-tag">Microservices</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Details
+                            </a>
+                            <a href="https://github.com/sualh1999" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-project-id="2">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/projects/chat-app.svg') }}" alt="Real-time Chat Application">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Real-time Chat Application</h3>
+                        <p class="project-description">
+                            A real-time chat application built with Flask and WebSockets supporting private messaging and group chats.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">WebSockets</span>
+                            <span class="project-tag">HTMX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Details
+                            </a>
+                            <a href="https://github.com/sualh1999" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-project-id="3">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/projects/dashboard.svg') }}" alt="Data Analysis Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Data Analysis Dashboard</h3>
+                        <p class="project-description">
+                            A data visualization dashboard for business intelligence built with Django and Chart.js.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Django</span>
+                            <span class="project-tag">Pandas</span>
+                            <span class="project-tag">Chart.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Details
+                            </a>
+                            <a href="https://github.com/sualh1999" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-project-id="4">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/projects/api-gateway.svg') }}" alt="API Gateway Service">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">API Gateway Service</h3>
+                        <p class="project-description">
+                            A high-performance API gateway service built with FastAPI that routes requests to appropriate microservices.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">JWT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Details
+                            </a>
+                            <a href="https://github.com/sualh1999" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-project-id="5">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/projects/todo-app.svg') }}" alt="HTMX-Powered TODO Application">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HTMX-Powered TODO Application</h3>
+                        <p class="project-description">
+                            A modern TODO application built with Flask and HTMX for a SPA-like experience without complex JavaScript.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">HTMX</span>
+                            <span class="project-tag">AlpineJS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Details
+                            </a>
+                            <a href="https://github.com/sualh1999" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card" data-project-id="6">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/projects/cms.svg') }}" alt="Content Management System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Content Management System</h3>
+                        <p class="project-description">
+                            A flexible content management system built with Django that supports custom content types and workflows.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Django</span>
+                            <span class="project-tag">REST API</span>
+                            <span class="project-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Details
+                            </a>
+                            <a href="https://github.com/sualh1999" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-container">
+                <p class="contact-description">
+                    I'm always open to discussing new projects, work opportunities, or collaboration ideas. Feel free to reach out!
+                </p>
+                
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:sualhmuhammed@gmail.com">sualhmuhammed@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Addis Ababa, Ethiopia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/sualh1999" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://dev.to" target="_blank" class="social-link" aria-label="Dev.to">
+                        <i class="fab fa-dev"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Design and developed with <i class="fas fa-heart"></i> using Python, Flask and vanilla JavaScript</p>
+                
+                <div class="footer-links">
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                
+                <p class="footer-copy">&copy; 2025 Salih Muhammed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Project Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">Project Title</h2>
+            <div class="modal-content">
+                <!-- Content will be dynamically populated by JavaScript -->
+            </div>
+            <div class="modal-buttons">
+                <a href="#" class="btn btn-primary" target="_blank">Visit Live Demo</a>
+                <a href="#" class="btn btn-outline" target="_blank">View Source Code</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
