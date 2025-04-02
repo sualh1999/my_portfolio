@@ -771,7 +771,7 @@ img, svg {
   border-radius: var(--radius-lg);
   width: 90%;
   max-width: 800px;
-  max-height: 90vh;
+  max-height: 95vh; /* Increased from 90vh to give more space for phone screenshots */
   overflow-y: auto;
   padding: var(--space-xl);
   position: relative;
@@ -813,16 +813,35 @@ img, svg {
 .modal-image {
   margin-bottom: var(--space-lg);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow: auto; /* Auto enables scrolling when zoomed */
   border: 1px solid var(--border-color);
   background-color: var(--bg-primary);
+  position: relative;
+  /* Increased height to accommodate taller phone screenshots */
+  max-height: 70vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-image img {
-  width: 100%;
+  max-width: 70%; /* Further reduced to ensure all images fit within view */
+  max-height: 62vh; /* Reduced height to guarantee full visibility */
   height: auto;
+  width: auto;
   display: block;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+  object-fit: contain;
+  /* Initial transform is set dynamically in JavaScript based on image aspect ratio */
 }
+
+.zoomable-img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Removed zoom controls and zoom level indicator */
 
 .modal-section {
   margin-bottom: var(--space-lg);
@@ -1122,17 +1141,27 @@ img, svg {
     margin-bottom: var(--space-lg);
     border-radius: var(--radius-md);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 70vh;
 }
 
 .slider-container {
     display: flex;
     transition: transform 0.3s ease;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
 }
 
 .slider-container img {
-    width: 100%;
+    /* Remove width:100% to allow image to display at a size that fits fully in container */
+    max-width: 70%;
+    height: auto;
     flex-shrink: 0;
-    object-fit: cover;
+    object-fit: contain;
+    max-height: 62vh; /* Reduced height to match modal image */
+    /* Initial transform is set dynamically in JavaScript based on image aspect ratio */
 }
 
 .slider-btn {
