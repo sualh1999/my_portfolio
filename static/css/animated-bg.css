@@ -1,0 +1,84 @@
+/* Animated Background Styles */
+
+.bg-animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.bg-gradient-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float-animation 20s infinite ease-in-out;
+}
+
+.bg-gradient-1 {
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.4), rgba(139, 92, 246, 0) 70%);
+  width: 45vw;
+  height: 45vw;
+  top: 5%;
+  left: 10%;
+  animation-duration: 30s;
+}
+
+.bg-gradient-2 {
+  background: radial-gradient(circle at center, rgba(0, 136, 204, 0.4), rgba(0, 136, 204, 0) 70%);
+  width: 40vw;
+  height: 40vw;
+  top: 60%;
+  left: 65%;
+  animation-duration: 28s;
+  animation-delay: 3s;
+}
+
+.bg-gradient-3 {
+  background: radial-gradient(circle at center, rgba(227, 76, 38, 0.3), rgba(227, 76, 38, 0) 70%);
+  width: 35vw;
+  height: 35vw;
+  top: 65%;
+  left: 25%;
+  animation-duration: 32s;
+  animation-delay: 7s;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .bg-animation-container {
+  opacity: 0.2;
+}
+
+@keyframes float-animation {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(3%, -3%) scale(1.03);
+  }
+  50% {
+    transform: translate(1%, 5%) scale(0.97);
+  }
+  75% {
+    transform: translate(-3%, 3%) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Additional blur gradient */
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  backdrop-filter: blur(100px);
+  opacity: 0.05;
+}
