@@ -604,10 +604,7 @@ function getProjectData(projectId) {
               'Authentication for admin and API routes',
               'Dashboard overview with key job and user metrics',
               'Job analytics with activity trends and top companies/jobs',
-              'Company management with job postings and applicant count',
-              'Dynamic data rendering with asynchronous pagination',
-              'API for job trends with date filtering',
-              'Custom time formatting and user/company retrieval'
+              'Company management with job postings and applicant count'
           ],
           screenshots: [
               '/static/images/projects/screenshots/maroset-admin-1.jpg',
@@ -623,9 +620,7 @@ function getProjectData(projectId) {
           features: [
               'Users select interests via buttons or by typing',
               'Scrapes coupon provider site every minute for new free courses',
-              'Sends relevant courses to users based on their preferences',
-              'Users can add, edit, or clear their preferences',
-              'Automated and real-time course updates'
+              'Sends relevant courses to users based on their preferences'
           ],
           screenshots: [
               '/static/images/projects/screenshots/udemy-bot-1.jpg',
@@ -677,8 +672,8 @@ function getProjectData(projectId) {
           githubLink: null
       },
       '6': {
-          title: 'Hanif Bot',
-          description: 'A Telegram bot for Hanif Charity that helps users register for membership, set donation amounts, and receive reminders for due payments. It also supports one-time donations and allows users to communicate with admins for help or information. Donations are processed via a Telegram Web App, and receipts are forwarded to admins for review.',
+          title: 'Donation Bot',
+          description: 'A Telegram bot for Charity that helps users register for membership, set donation amounts, and receive reminders for due payments. It also supports one-time donations and allows users to communicate with admins for help or information. Regstration are processed via a Telegram Web App, and receipts are forwarded to admins for review.',
           technologies: ['Python', 'python-telegram-bot', 'SQLite', 'HTML', 'CSS', 'JavaScript'],
           features: [
               'Membership registration with custom donation amount and duration',
