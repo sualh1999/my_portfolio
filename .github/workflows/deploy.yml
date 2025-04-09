@@ -26,7 +26,7 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} "
-            cd /home/${{ secrets.CPANEL_USER }}/path/to/repo &&
+            cd /home/${{ secrets.CPANEL_USER }}/repositories/my_portfolio &&
             git pull origin main &&
             echo 'Deployment finished.'
           "
