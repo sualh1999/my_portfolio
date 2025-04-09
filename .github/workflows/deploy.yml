@@ -9,19 +9,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup SSH
+      - name: Setup SSH key and known hosts
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.CPANEL_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p ${{ secrets.CPANEL_PORT || 22 }} ${{ secrets.CPANEL_HOST }} >> ~/.ssh/known_hosts
+
+          # Disable all other identities to prevent "too many authentication failures"
+          echo "IdentitiesOnly yes" >> ~/.ssh/config
+          
+          ssh-keyscan -p 22 ${{ secrets.CPANEL_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy via SSH
         run: |
-          ssh -p ${{ secrets.CPANEL_PORT || 22 }} ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} "
+          ssh -o StrictHostKeyChecking=no ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} "
             cd /home/${{ secrets.CPANEL_USER }}/path/to/repo &&
             git pull origin main &&
             echo 'Deployment finished.'
